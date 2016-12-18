@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Movie Booking</title>
+  <!-- load bootstrap and fontawesome via CDN -->
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+</head>
+
+<body  ng-app="movieApp">
+<div>
+ <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Movie Booking</a>
+                </div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="#/booking"><i class="fa fa-shield"></i> Booking</a></li>
+                    <li><a href="#/cancellation"><i class="fa fa-comment"></i> Cancellation</a></li>
+                    <li><a href="#/theatre"><i class="fa fa-shield"></i>Theatre</a></li>
+                    <li><a href="#/city"><i class="fa fa-shield"></i>City</a></li>
+                    <li><a href="#/user"><i class="fa fa-shield"></i>User</a></li>
+                    <li><a href="#/admin"><i class="fa fa-shield"></i>Admin</a></li>
+                </ul>
+            </div>
+            </nav>
+        </header>
+
+  <div ng-view></div>
+
+
+
+</div>
+
+<script type="text/javascript" src="/build/bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+.movies-container {
+    height: 275px;
+    width: 285px;
+    display: inline-block;
+    margin-bottom: 57px;
+}
+
+.movie-poster {
+    height: 200px;
+    width: 200px;
+    display: block;
+}
+
+.movie-title {
+    display: block;
+}
+
+.movie-director {
+    display: block;
+}
+
+.book {
+    width: 200px !important;
+}
+
+.movies-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.fgm-movie-align {
+    margin-bottom: 20px;
+}
+
+.filter-movies {
+    margin-bottom: 40px;
+}

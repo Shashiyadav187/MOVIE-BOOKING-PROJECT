@@ -1,0 +1,29 @@
+<div>
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Theatre ID</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+
+                    <td><input ng-model="theatre.theatreName" /></td>
+
+                    <td><button ng-click="addTheatre(theatre)" class="btn btn-primary">Add </button></td>
+
+                    <td><button ng-click="updateTheatre(theatre)" class="btn btn-primary">Update</button></td>
+
+                </tr>
+                <tr ng-repeat=" theatre in theatreList">
+                    <td>{{theatre.theatreName}}</td>
+                    <td><button ng-click="removeTheatre(theatre)" class="btn btn-danger">Remove</button></td>
+                    <td><button ng-click="editTheatre(theatre)" class="btn btn-primary">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>
