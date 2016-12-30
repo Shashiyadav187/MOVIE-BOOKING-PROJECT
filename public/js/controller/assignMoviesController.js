@@ -38,7 +38,7 @@ module.exports = function($scope, $http) {
                                                     var dateTo=document.getElementById("toDate").value;
                                                     asgn.assignDTto=dateTo;
 
-                                                    var val='false';
+                                                    var val='true';
                                                     $http.put('/movie/updateMovi/' + $scope.asgn.title+'/'+val).success(function (response) {
                                                         console.log(response);
                                                       });
@@ -65,7 +65,7 @@ module.exports = function($scope, $http) {
             refresh();
         });
 
-        var val='true';
+        var val='false';
         $http.put('/movie/updateMovi/'+$scope.asgn.title+'/'+val).success(function (response) {
             console.log(response);
            });
