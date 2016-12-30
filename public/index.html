@@ -3,28 +3,44 @@
 
 <head>
   <title>Movie Booking</title>
-  <!-- load bootstrap and fontawesome via CDN -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!-- load bootstrap and fontawesome via CDN -->
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
       <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
 </head>
+
 
 <body  ng-app="movieApp">
 <div>
  <header>
-            <nav class="navbar navbar-default">
+            <nav class="navbar">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Movie Booking</a>
+                    <a class="navbar-brand"  href="/">Movie Booking</a>
                 </div>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#/booking"><i class="fa fa-shield"></i> Booking</a></li>
-                    <li><a href="#/cancellation"><i class="fa fa-comment"></i> Cancellation</a></li>
-                    <li><a href="#/theatre"><i class="fa fa-shield"></i>Theatre</a></li>
-                    <li><a href="#/city"><i class="fa fa-shield"></i>City</a></li>
-                    <li><a href="#/user"><i class="fa fa-shield"></i>User</a></li>
-                    <li><a href="#/admin"><i class="fa fa-shield"></i>Admin</a></li>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a class="color-me"href="#/"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a class="color-me" href="#/booking"><i class="fa fa-pencil"></i> Booking</a></li>
+                    <li><a class="color-me" href="#/cancellation"><i class="glyphicon glyphicon-remove"></i> Cancellation</a></li>
+                    <li><a class="color-me" href="#/theatre"><i class="fa fa-shield"></i>Theatre</a></li>
+                    <li><a class="color-me" href="#/city"><i class="glyphicon glyphicon-map-marker"></i>City</a></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a class="color-me" href="#/user"><i class="fa fa-user"></i>User</a></li>
+                    <li class="dropdown"><a class="color-me" class="dropdown-toggle" data-toggle="dropdown"  href="#/admin"><i class="fa fa-wrench"></i>Admin<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#/city">City</a></li>
+                          <li><a href="#/showTimings">Show Timeings</a></li>
+                          <li><a href="#/theatre">Theatre</a></li>
+                          <li><a href="#/movies">Movies</a></li>
+                          <li><a href="#/assign">Assingn Movies</a></li>
+                        </ul>
+                      </li>
+
                 </ul>
             </div>
             </nav>
@@ -37,5 +53,69 @@
 </div>
 
 <script type="text/javascript" src="/build/bundle.js"></script>
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-6 footerleft ">
+        <div class="logofooter"> Acknowledgement</div>
+        <p>This Project Designed and Developed By Ruchik Gaikwad submitted in the partial fulfilment of the cretificate of diploma in MEAN stack at NIIT PUNE DECCAN. Thanking TechMentors And Expert Faculty for their supprot.</p>
+        <p><i class="glyphicon glyphicon-map-pin"></i> 9/777 Lodhi Colony New Delhi -110003, INDIA</p>
+        <p><i class="fa fa-phone"></i> Phone (India) : +91 9013852240</p>
+        <p><i class="fa fa-envelope"></i> E-mail : ruchik.gaikwad@gmail.com</p>
+
+      </div>
+      <div class="col-md-2 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">GENERAL LINKS</h6>
+        <ul class="footer-ul">
+          <li><a> Career</a></li>
+          <li><a> Privacy Policy</a></li>
+          <li><a> Terms And Conditions</a></li>
+          <li><a> Client Gateway</a></li>
+          <li><a> Ranking</a></li>
+          <li><a> Case Studies</a></li>
+          <li><a> Frequently Ask Questions</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <h6 class="heading7">LATEST POST</h6>
+        <div class="post">
+          <p>Added footer to the web App <span>December 25,2016</span></p>
+          <p>Added css to the footer  <span>December 25,2016</span></p>
+          <p>Made Theatre for Admin Controller <span>December 24,2016</span></p>
+        </div>
+      </div>
+      <!-- <div class="col-md-3 col-sm-6 paddingtop-bottom">
+        <div class="fb-page" data-href="https://www.facebook.com/facebook"  data-height="300" style="margin-bottom:15px;" >
+          <div class="fb-xfbml-parse-ignore">
+            <blockquote cite="https://www.facebook.com/facebook"><a href="https://www.facebook.com/facebook">Facebook</a></blockquote>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</footer>
+
+
+<div class="copyright">
+  <div class="container">
+    <div class="col-md-6">
+      <p>© 2016 - All Rights Reserved</p>
+    </div>
+    <div class="col-md-6">
+      <ul class="bottom_ul">
+        <li><a>MovieBooking.com</a></li>
+        <li><a>About us</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Faq's</a></li>
+        <li><a>Contact us</a></li>
+        <li><a>Site Map</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 </body>
+
+
 </html>

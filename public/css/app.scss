@@ -3,7 +3,9 @@
     width: 285px;
     display: inline-block;
     margin-bottom: 57px;
+
 }
+
 
 .movie-poster {
     height: 200px;
@@ -24,9 +26,10 @@
 }
 
 .movies-wrapper {
-    margin-left: auto;
+    margin-left: 120px;
     margin-right: auto;
     width: 90%;
+    margin-top: 10px;
 }
 
 .fgm-movie-align {
@@ -35,4 +38,154 @@
 
 .filter-movies {
     margin-bottom: 40px;
+}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 60%;
+      margin: auto;
+      height: 400px;
+}
+
+.navbar {
+  background-color: #0e2c48;
+  border-color: #0e2c48;
+
+}
+.nav .navbar-nav .navbar-left {
+  color: white;
+}
+.color-me{
+  color: white;
+
+}
+.navbar-brand{
+  color: white;
+}
+
+.admin{
+  font-family: serif;
+  font-style: italic;;
+
+}
+// .navbar-fixed-left {
+//   width: 140px;
+//   position: fixed;
+//   border-radius: 0;
+//   height: 100%;
+//   margin-bottom: 1px;
+// }
+//
+//
+// .navbar-fixed-left .navbar-nav > li {
+//   float: none;  /* Cancel default li float: left */
+//   width: 139px;
+//   margin-bottom: 1px;
+// }
+//
+// .navbar-fixed-left + .container {
+//   padding-left: 160px;
+// }
+//
+// /* On using dropdown menu (To right shift popuped) */
+// .navbar-fixed-left .navbar-nav > li > .dropdown-menu {
+//   margin-top: -50px;
+//   margin-left: 140px;
+//   margin-bottom: 1px;
+//
+// }
+
+// ..............................................................................................................................................................
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+footer { background-color: #0e2c48; min-height:350px; font-family: 'Open Sans', sans-serif; }
+.footerleft { margin-top:50px; padding:0 36px; }
+.logofooter { margin-bottom:10px; font-size:25px; color:#fff; font-weight:700;}
+
+.footerleft p { color:#fff; font-size:12px !important; font-family: 'Open Sans', sans-serif; margin-bottom:15px;}
+.footerleft p i { width:20px; color:#999;}
+
+
+.paddingtop-bottom {  margin-top:50px;}
+.footer-ul { list-style-type:none;  padding-left:0px; margin-left:2px;}
+.footer-ul li { line-height:29px; font-size:12px;}
+.footer-ul li a { color:#a0a3a4; transition: color 0.2s linear 0s, background 0.2s linear 0s; }
+.footer-ul i { margin-right:10px;}
+.footer-ul li a:hover {transition: color 0.2s linear 0s, background 0.2s linear 0s; color:#ff670f; }
+
+ .icon-ul { list-style-type:none !important; margin:0px; padding:0px;}
+ .icon-ul li { line-height:75px; width:100%; float:left;}
+ .icon { float:left; margin-right:5px;}
+
+
+ .copyright { min-height:40px; background-color:#000000;}
+ .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
+ .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
+ .post p { font-size:12px; color:#FFF; line-height:20px;}
+ .post p span { display:block; color:#8f8f8f;}
+ .bottom_ul { list-style-type:none; float:right; margin-bottom:0px;}
+ .bottom_ul li { float:left; line-height:40px;}
+ .bottom_ul li:after { content:"/"; color:#FFF; margin-right:8px; margin-left:8px;}
+ .bottom_ul li a { color:#FFF;  font-size:12px;}
+// ................................................................................................................................................................
+
+.rowA{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.rowB{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 26px;
+}
+
+.rowC{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 48px;
+}
+.rowD{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 70px;
+}
+.rowE{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 100px;
+}
+.rowF{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 130px;
+}
+.rowG{
+  margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 36px;
+    margin-left: 150px;
+}
+.screen{
+  height: 30px;
+  width: 300px;
+  margin-left: 175px;
+  margin-right: auto;
+  margin-bottom: 60px;
+
+}
+
+.line {
+    width: 639px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: 18px;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }

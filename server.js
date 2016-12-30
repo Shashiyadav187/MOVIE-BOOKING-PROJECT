@@ -4,7 +4,8 @@ var express = require('express');
 var routes = require('./routes/movie-crud');
 var theatre = require('./routes/theatre-crud');
 var city = require('./routes/city-crud');
-
+var time = require('./routes/time-crud');
+var assign=require('./routes/assignmovies-crud');
 
 var bodyParser=require('body-parser');
 
@@ -15,6 +16,8 @@ app.use(bodyParser.json());
 app.use('/movie', routes)
 app.use('/theatre', theatre);
 app.use('/city', city);
+app.use('/time', time);
+app.use('/assign', assign);
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var dbHost = 'mongodb://localhost:27017/test';

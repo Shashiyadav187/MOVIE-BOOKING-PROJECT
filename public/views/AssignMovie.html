@@ -1,0 +1,75 @@
+<div class="container">
+    <center>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Theatre</th>
+                    <th>Movies</th>
+                    <th>Date From</th>
+                    <th>Date To</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>
+                      <div ng-app="movieApp" data-ng-controller="CityController as theChildController" >
+                        <select id="citySelect" class="citySelect" ng-model="asgn.assignCity">
+                            <option ng-repeat="city in cityList">{{city.cityName}}</options>
+                        </select>
+                      </div>
+                    </td>
+                    <td>
+                      <div ng-app="movieApp" data-ng-controller="TheatreController as theChildController" >
+                        <select id="theatreSelect"  class="theatreSelect" ng-model="asgn.assignThr">
+                          <option ng-repeat="theatre in theatreList">
+                            {{theatre.showtime}}
+                            {{theatre.theatreName}}
+                          </option>
+                          </select>
+                    </td>
+                    <td>
+                      <div ng-app="movieApp" data-ng-controller="BookingController as theChildController" >
+                          <select id="movieSelect" class="movieSelect" ng-model="asgn.assignMovie">
+                            <option ng-repeat ="movi in moviList">
+                               {{movi.moviTitle}}
+
+                             </option>
+
+                           </select>
+                         </td>
+
+                    <!-- <td>
+                      <div ng-app="movieApp" data-ng-controller="BookingController as theChildController">
+                           <div class="col-sm-4" ng-repeat="movie in movieList ">
+                            <img ng-src= "{{movie.moviPoster}}" height="100" width="100" >                   </div>
+                    </td> -->
+
+                    <td>
+                      <input type="date" name="fromDate" id="fromDate" ng-model="asgn.assignDTfr">
+                    </td>
+                    <td>
+                      <input type="date" name="toDate" id="toDate" ng-model="asgn.assignDTto">
+                    </td>
+
+
+                    <td><button ng-click="addAsgnMovie(asgn)" class="btn btn-success">Add </button></td>
+
+                    <td><button ng-click="updateAsgnMovie(asgn)" class="btn btn-primary">Update</button></td>
+
+                </tr>
+                <tr ng-repeat=" asgn in asgnList" >
+                    <td>{{asgn.assignCity}}</td>
+                    <td>{{asgn.assignThr}}</td>
+                    <td>{{asgn.assignMovie}}</td>
+                    <td>{{asgn.assignDTfr}}  </td>
+                    <td>{{asgn.assignDTto}}</td>
+
+
+                    <td><button ng-click="removeAsgnMovie(asgn)" class="btn btn-danger">Remove</button></td>
+                    <td><button ng-click="editAsgnMovie(asgn)" class="btn btn-primary">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </center>

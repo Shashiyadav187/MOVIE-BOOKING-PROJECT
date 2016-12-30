@@ -18,7 +18,8 @@ var movieSchema = mongoose.Schema({
   moviGenre: String,
   moviPoster: String,
   moviDirector: String,
-  moviActors: String
+  moviActors: String,
+      status:String
  });
 var Movie = mongoose.model('Movie', movieSchema, 'movie');
 
@@ -57,8 +58,8 @@ router.post('/addMovie', function(req, res){
     moviGenre: genre,
     moviPoster: poster,
     moviDirector: director,
-    moviActors: actors
-
+    moviActors: actors,
+    status:'false'
   });
 
   movie.save(function(err, docs){
@@ -86,6 +87,26 @@ router.put('/updateMovie/:id', function(req, res){
     });
 })
 
+router.put('/updateMovi/:moviTitle/:val',function(req,res){
+  console.log("status Changed");
+  console.log(req.body);
+Movie.findOneAndUpdate({title: req.params.title },
+  {
+    $set:{status: req.params.val }
+},function (err, data){
+  res.json(data);
+});
+
+});
+
+
+// router.put('/updateMovi/:moviTitle/:val', function(req,res){
+//   console.log("status Changed");
+//   console.log(req.body);
+// Movie.findOneAndUpdate({moviTitle:req.params.moviTitle},
+// {$set:{status:req.params.val}}, function(err, data){res.json(data);});
+//
+// })
 
 // catch 404 and forward to error handler
 router.use(function(req, res, next) {

@@ -40,6 +40,20 @@ app.config(function($routeProvider) {
     templateUrl:'views/admin.html',
     controller:'AdminController',
   })
+  .when('/showTimings',{
+    templateUrl:'views/time.html',
+    controller:'TimeController',
+  })
+
+  .when('/assign',{
+    templateUrl:'views/assignMovie.html',
+    controller:'AssignMoviesController',
+  })
+  .when('/seats',{
+    templateUrl:'views/seats.html',
+    controller:'SeatsController',
+  })
+
   .otherwise({
     redirectTo: '/home',
   });
