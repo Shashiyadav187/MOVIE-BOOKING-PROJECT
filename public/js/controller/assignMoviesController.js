@@ -38,11 +38,26 @@ module.exports = function($scope, $http) {
                                                     var dateTo=document.getElementById("toDate").value;
                                                     asgn.assignDTto=dateTo;
 
+                                                    var showTime = "";
+                                                    var x = 0;
+
+                                                    for (x=0;x<showtimeSelect.length;x++)
+                                                    {
+                                                      if (showtimeSelect[x].selected)
+                                                      {
+
+                                                        showTime = showTime  + showtimeSelect[x].value;
+                                                      }
+                                                    }
+                                                     asgn.assignShowTime=showTime;
+
+
+
                                                     var val='true';
                                                     $http.put('/movie/updateMovi/' + $scope.asgn.title+'/'+val).success(function (response) {
                                                         console.log(response);
                                                       });
-                                                      alert('Mapping Saved Successfully');
+                                                      // alert('Mapping Saved Successfully');
                                                         // window.location.reload();
                                                     $scope.asgn='';
 

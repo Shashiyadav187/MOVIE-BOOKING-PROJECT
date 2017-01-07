@@ -14,7 +14,7 @@ var theatreSchema = mongoose.Schema({
 
   theatreName: String,
   city:String,
-  showtime:String
+  // showtime:String
  });
 var Theatre = mongoose.model('Theratre', theatreSchema, 'theatre');
 
@@ -41,13 +41,13 @@ router.post('/addTheatre', function(req, res){
 
   var theatre = req.body.theatreName;
   var citythr=req.body.city;
-  var thrtime=req.body.showtime;
+  // var thrtime=req.body.showtime;
 
   var theatre = new Theatre({
 
     theatreName: theatre,
           city:citythr,
-          showtime:thrtime
+          // showtime:thrtime
   });
 
   theatre.save(function(err, docs){

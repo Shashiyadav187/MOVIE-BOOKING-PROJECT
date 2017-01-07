@@ -20,10 +20,10 @@ module.exports = function($scope, $http) {
                              theatre.city=cty1;
 
 
-                            var stime=document.getElementById("showtimeSelect");
-                            var stime1= stime.options[stime.selectedIndex].text;
-                            theatre.showtime=stime1;
-                        
+                            // var stime=document.getElementById("showtimeSelect");
+                            // var stime1= stime.options[stime.selectedIndex].text;
+                            // theatre.showtime=stime1;
+
                             $http.post('/theatre/addTheatre', theatre).success(function (response) {
                                 console.log(response);
                                 console.log("CREATE IS SUCCESSFUL");

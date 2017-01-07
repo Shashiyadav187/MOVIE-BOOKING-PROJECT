@@ -54,6 +54,16 @@ app.config(function($routeProvider) {
     controller:'SeatsController',
   })
 
+  .when('/details',{
+    templateUrl:'views/details.html',
+    controller:'DetailsController',
+  })
+
+  .when('/payment',{
+    templateUrl:'views/payment.html',
+    controller:'PaymentController',
+  })
+
   .otherwise({
     redirectTo: '/home',
   });

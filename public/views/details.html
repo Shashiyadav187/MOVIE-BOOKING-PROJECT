@@ -1,0 +1,13 @@
+<div class="container">
+
+<div>
+<div ng-app="movieApp" data-ng-controller="BookingController as theChildController" >
+<div ng-repeat="movi in moviList  ">
+    {{movi.moviTitle}}
+  <img  ng-src={{movi.moviPoster}} />
+</div>
+</div>
+
+<a href="#/seats" class="button-color btn btn-primary" role="button">Proceed</a>
+
+</div>

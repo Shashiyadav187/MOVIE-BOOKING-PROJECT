@@ -1,74 +1,134 @@
+ <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <div class="container">
     <center>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>City</th>
+      <div class="row">
+
+        <div class="col-lg-12">
+        <h1>Enter The Details</h1>
+      </div>
+
+        <div class="col-lg-12 well">
+        <table  height="100%" weight="100%" class="table  table-condensed table-bordered ">
+
+
+                    <!-- <th>City</th>
                     <th>Theatre</th>
                     <th>Movies</th>
+                    <th>Show Times</th>
                     <th>Date From</th>
-                    <th>Date To</th>
-                </tr>
-            </thead>
+                    <th>Date To</th> -->
+
+
             <tbody>
                 <tr>
-
-                    <td>
-                      <div ng-app="movieApp" data-ng-controller="CityController as theChildController" >
-                        <select id="citySelect" class="citySelect" ng-model="asgn.assignCity">
-                            <option ng-repeat="city in cityList">{{city.cityName}}</options>
+                  <th>
+                    Select City
+                  </th>
+                    <td colspan="2">
+                      <div ng-app="movieApp" data-ng-controller="TheatreController as theChildController" >
+                        <select id="citySelect" class="citySelect" ng-model="$parent.asgn.assignCity">
+                            <option ng-repeat="theatre in theatreList  " value="{{theatre.city}}">{{theatre.city}}</options>
                         </select>
                       </div>
                     </td>
-                    <td>
+                  </tr>
+                  <tr>
+                    <th>Select Theatre
+                    </th>
+                    <td colspan="2">
                       <div ng-app="movieApp" data-ng-controller="TheatreController as theChildController" >
-                        <select id="theatreSelect"  class="theatreSelect" ng-model="asgn.assignThr">
-                          <option ng-repeat="theatre in theatreList">
-                            {{theatre.showtime}}
+                        <select id="theatreSelect"  class="theatreSelect" ng-model="$parent.asgn.assignThr">
+                          <option ng-repeat="theatre in theatreList | filter: $parent.asgn.assignCity">
+                            <!-- {{theatre.showtime}} -->
                             {{theatre.theatreName}}
                           </option>
                           </select>
+                        </div>
                     </td>
-                    <td>
+                  </tr>
+                  <tr>
+                    <th>Enter Movie</th>
+
+                    <td colspan="2">
                       <div ng-app="movieApp" data-ng-controller="BookingController as theChildController" >
-                          <select id="movieSelect" class="movieSelect" ng-model="asgn.assignMovie">
+                          <select id="movieSelect" class="movieSelect" ng-model="$parent.asgn.assignMovie">
                             <option ng-repeat ="movi in moviList">
                                {{movi.moviTitle}}
 
                              </option>
 
                            </select>
+                         </div>
                          </td>
+                       </tr>
+                        <tr>
+                          <th>Select Show Timings</th>
 
-                    <!-- <td>
-                      <div ng-app="movieApp" data-ng-controller="BookingController as theChildController">
-                           <div class="col-sm-4" ng-repeat="movie in movieList ">
-                            <img ng-src= "{{movie.moviPoster}}" height="100" width="100" >                   </div>
-                    </td> -->
+                          <td colspan="2">
+                           <div ng-app="movieApp" data-ng-controller="TimeController as theChildController">
+                                      <select id="showtimeSelect" class="showtimeSelect" ng-model="asgn.assignShowTime" multiple >
+                                              <option ng-repeat="time in timeList">
+                                                {{time.timeName}}
+                                                {{time.timeMins}}
+                                                {{time.timePeriod}}
+                                              </option>
+                                       </select>
+                           </div>
+                         </td>
+                         <tr>
+                           <th>
+                             From Date
+                           </th>
 
-                    <td>
+                    <td colspan="2">
                       <input type="date" name="fromDate" id="fromDate" ng-model="asgn.assignDTfr">
                     </td>
-                    <td>
+                  </tr>
+                  <tr>
+                    <th>To Date</th>
+
+                    <td colspan="2">
                       <input type="date" name="toDate" id="toDate" ng-model="asgn.assignDTto">
                     </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                    <button ng-click="addAsgnMovie(asgn)" class="btn btn-success btn-lg " style="padding: 10px 50px"><span class="glyphicon glyphicon-plus"></span>Assign Movie </button></td>
+                  </div>
+                </div>
+                <br/>
+
+                    <!-- <td><button ng-click="updateAsgnMovie(asgn)" class="btn btn-primary">Update</button></td> -->
 
 
-                    <td><button ng-click="addAsgnMovie(asgn)" class="btn btn-success">Add </button></td>
 
-                    <td><button ng-click="updateAsgnMovie(asgn)" class="btn btn-primary">Update</button></td>
-
-                </tr>
+                <div class="col-lg-12">
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <th>City</th>
+                    <th>Theatre</th>
+                    <th>Movie</th>
+                    <th>ShowTimings</th>
+                    <th>From Date </th>
+                    <th>To Date</th>
+                    <th>Operation</th>
+                  </thead>
+                <tbody>
                 <tr ng-repeat=" asgn in asgnList" >
                     <td>{{asgn.assignCity}}</td>
                     <td>{{asgn.assignThr}}</td>
                     <td>{{asgn.assignMovie}}</td>
+                    <td>{{asgn.assignShowTime}}</td>
                     <td>{{asgn.assignDTfr}}  </td>
                     <td>{{asgn.assignDTto}}</td>
 
 
-                    <td><button ng-click="removeAsgnMovie(asgn)" class="btn btn-danger">Remove</button></td>
-                    <td><button ng-click="editAsgnMovie(asgn)" class="btn btn-primary">Edit</button></td>
+
+                    <td><button ng-click="removeAsgnMovie(asgn)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Remove</button></td>
                 </tr>
             </tbody>
         </table>

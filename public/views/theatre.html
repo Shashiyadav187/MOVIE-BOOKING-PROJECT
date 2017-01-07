@@ -19,7 +19,7 @@
                               </select>
                         </div>
                   </td>
-                  <td>
+                  <!-- <td>
                     <div ng-app="movieApp" data-ng-controller="TimeController as theChildController">
                       Show Time: <select id="showtimeSelect" class="showtimeSelect" >
                                        <option ng-repeat="time in timeList">
@@ -29,7 +29,7 @@
                                        </option>
                                 </select>
                     </div>
-                  </td>
+                  </td> -->
                     <td>Theatre Name:<input ng-model="theatre.theatreName" /></td>
 
                     <td><button ng-click="addTheatre(theatre)" class="btn btn-success">Add </button></td>
@@ -39,7 +39,7 @@
                 </tr>
                 <tr ng-repeat=" theatre in theatreList">
                       <td>{{theatre.city}}</td>
-                      <td>{{theatre.showtime}}</td>
+                      <!-- <td>{{theatre.showtime}}</td> -->
                       <td>{{theatre.theatreName}}</td>
 
                     <td><button ng-click="removeTheatre(theatre)" class="btn btn-danger">Remove</button></td>

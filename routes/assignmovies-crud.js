@@ -22,7 +22,8 @@ var assignSchema = mongoose.Schema({
      assignThr:String,
      assignMovie:String,
      assignDTfr:String,
-     assignDTto:String
+     assignDTto:String,
+     assignShowTime:String
  });
 
 var AsgnMovie = mongoose.model('assignMovie', assignSchema, 'asMovie');
@@ -60,6 +61,7 @@ router.post('/addAsgnMovie', function(req, res){
   var asMovie=req.body.assignMovie;
   var asDTfr=req.body.assignDTfr;
   var asDTto=req.body.assignDTto;
+  var asST=req.body.assignShowTime;
 
   var asgnmovie = new AsgnMovie({
 
@@ -68,6 +70,7 @@ router.post('/addAsgnMovie', function(req, res){
     assignMovie:asMovie,
     assignDTfr:asDTfr,
     assignDTto:asDTto,
+    assignShowTime:asST,
 
   });
 

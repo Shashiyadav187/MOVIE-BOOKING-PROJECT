@@ -12,3 +12,5 @@ app.controller('AdminController',require('./adminController'));
 app.controller('TimeController',require('./timeController'));
 app.controller('AssignMoviesController', require('./assignMoviesController'));
 app.controller('SeatsController', require('./seatsController'));
+app.controller('DetailsController', require('./detailsController'));
+app.controller('PaymentController', require('./paymentController'));

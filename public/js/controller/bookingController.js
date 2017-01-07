@@ -18,22 +18,22 @@ module.exports = function($scope, $http) {
                             //console.log(response);
                             var movieObj={};
                             for(var key in response){
-                                if(key=='Title' || key== 'Language' || key== 'Poster' || key== 'Genre' || key== 'Director' || key== 'Actors'){
+                                if(key=='Title' || key== 'Language' || key== 'Poster' || key== 'Genre' || key== 'Director' || key== 'Actors' || key=='Description'){
                                     movieObj[key] = response[key];
-                                     
+
                                 }
                             }
                            
-                           var serviceName = 'movi'  
+                           var serviceName = 'movi'
                             $http.post('/movie/addMovie', movieObj).success(function (response) {
                                 console.log(response);
                                 console.log("CREATE IS SUCCESSFUL");
                                 refresh();
                             });
-                           
+
                         });
         console.log($scope.contact);
-       
+
     };
 
     $scope.removeMovie = function (movie) {
@@ -60,4 +60,3 @@ module.exports = function($scope, $http) {
         })
     }
 };
-

@@ -1,12 +1,13 @@
 <div class="container" >
-Select Class
+
 <form>
 <!-- GOLD : <input id="toggleElement" type="radio" name="toggle"  />
 SILVER:<input id="toggleElement1" type="radio" name="toggle" /> -->
-<select id="selectClass" class="selectClass">
-  <option value=""> </option>
-  <option value="Gold">Gold</option>
-  <option value="Silver">Silver</option>
+<label>SELECT CLASS</label>
+<select id="selectClass" class="selectpicker selectClass claculate" data-rule-requried="true" >
+  <option value="">SELECT</option>
+  <option value="250">Gold -Rs250/-</option>
+  <option value="120">Silver-Rs120/-</option>
 </select>
 
 </form>
@@ -14,8 +15,9 @@ SILVER:<input id="toggleElement1" type="radio" name="toggle" /> -->
 
 <br>
 
-<from> Select Number of Seats
-  <select id="selectSeats" class="selectSeats">
+<from> <label>SELECT NO. SEATS</label>
+  <select id="selectSeats" class="selectpicker selectSeats calculate" data-rule-requried="true" >
+    <option value=""></option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -37,10 +39,10 @@ SILVER:<input id="toggleElement1" type="radio" name="toggle" /> -->
   <div class="gold" id ="gold">
 <div class="rowA" id="rowA">
   <form id="RowA" name="RowA" >
-  <input type="checkbox" class="gldCls" value="200"><span class="fa fa-wheelchair"></span> A1</input>
-  <input type="checkbox" class="gldCls" value="200"><span class="fa fa-wheelchair"></span> A2</input>
-  <input type="checkbox" class="gldCls" value="200"><span class="fa fa-wheelchair"></span> A3</input>
-  <input type="checkbox" class="gldCls" value="200"><span class="fa fa-wheelchair"></span> A4</input>
+  <input type="checkbox" class="gldCls" value="A1"><span class="fa fa-wheelchair"></span> A1</input>
+  <input type="checkbox" class="gldCls" value="A2"><span class="fa fa-wheelchair"></span> A2</input>
+  <input type="checkbox" class="gldCls" value="A3"><span class="fa fa-wheelchair"></span> A3</input>
+  <input type="checkbox" class="gldCls" value="A4"><span class="fa fa-wheelchair"></span> A4</input>
   <input type="checkbox" class="gldCls" value="A5"><span class="fa fa-wheelchair"></span> A5</input>
   <input type="checkbox" class="gldCls" value="A6"><span class="fa fa-wheelchair"></span> A6</input>
   <input type="checkbox" class="gldCls" value="A7"><span class="fa fa-wheelchair"></span> A7</input>
@@ -157,8 +159,10 @@ SILVER:<input id="toggleElement1" type="radio" name="toggle" /> -->
     </thead>
     <tbody>
       <tr>
-        <td><textarea id="seatCls"></textarea></td>
-        <td><textarea id="noOFSeats"></textarea></td>
-        <td><textarea id="totalAmount"></textarea></td>
+        <td><textarea id="seatCls" disabled="disabled"></textarea></td>
+        <td><textarea id="noOFSeats" disabled="disabled"></textarea></td>
+        <td><textarea id="totalAmount" disabled="disabled"></textarea></td>
       </tr>
+
 </div>
+<center><a href="#/payment" class="button-color btn btn-success" role="button">Proceed</a></center>
