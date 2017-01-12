@@ -100,6 +100,14 @@ router.put('/updateAsgnMovie/:id', function(req, res){
 })
 
 
+router.get('/selmoviename/:t', function (req, res) {
+    // console.log("REACHED GET FUNCTION ON SERVER");
+    AsgnMovie.find({assignMovie:req.params.t}, function (err, docs) {
+         res.json(docs);
+
+    });
+});
+
 // catch 404 and forward to error handler
 router.use(function(req, res, next) {
   var err = new Error('Not Found');

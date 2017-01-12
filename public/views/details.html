@@ -1,13 +1,80 @@
 <div class="container">
 
-<div>
-<div ng-app="movieApp" data-ng-controller="BookingController as theChildController" >
-<div ng-repeat="movi in moviList  ">
-    {{movi.moviTitle}}
-  <img  ng-src={{movi.moviPoster}} />
+<div ng-repeat="j in movi">
+<div class="well">
+  <h3>{{j.moviTitle}}</h3>
+  <br>
+  <img ng-src="{{j.moviPoster}}" alt="POSTER"  width="250" height="350"  >
+  <h4>Director - {{j.moviDirector}}</h4>
+  <h4>Actor - {{j.moviActors}}</h4>
+  <h4>Genre - {{j.moviGenre}}</h4>
+  <h4>Language - {{j.moviLanguage}}</h4>
+<br>
+<br>
+</div>
+
+
+<div class="well">
+  <div class="dcdD">
+<div ng-app="movieApp" ng-controller="TheatreController as theChildController">
+  <label>  City:- </label>
+    <select id="dcity" class="dcity" ng-model="$parent.qwerty.city">
+    <option ng-repeat="a in theatreList  " value="{{a.city}}" >
+      {{a.city}}
+      </<option>
+    </select>
+  </div>
+
+
+   &nbsp;&nbsp;&nbsp;
+   <div class="Ddate">
+         <label>  Date:- </label>
+
+           <select id="dTheatre" class="dTheatre" ng-model="$parent.qwerty.Date">
+           <option ng-repeat="x in movDates"  value="{{x | date:'yyyy MM,dd'}}">
+             {{x | date:'yyyy MM,dd'}}
+             </<option>
+           </select>
+         </div>
+         &nbsp;&nbsp;&nbsp;
+       </div>
+       </div>
+{{qwerty.city}}
+{{$parent.qwerty.Date}}
+{{qwerty.Theatre}}
+{{qwerty.time}}
+
+<div class="well ">
+  <div class="DoM">
+
+    <div ng-app="movieApp" data-ng-controller="AssignMoviesController as theChildController">
+      <label>  Theatre:- </label>
+        <select id="dTheatre" class="dTheatre" ng-model="$parent.qwerty.Theatre" >
+        <option ng-repeat="a in asgnList | filter:$parent.qwerty.city |filter:$parent.qwerty.Date" value="{{a.assignThr}}">
+          {{a.assignThr}}
+          </<option>
+        </select>
+      </div>
+      &nbsp;&nbsp;&nbsp;
+
+      <div ng-app="movieApp" data-ng-controller="AssignMoviesController as theChildController">
+
+        <div class="DST">
+           <label>  Timeings:- </label>&nbsp;
+         <div ng-repeat="a in asgnList |filter:$parent.qwerty.Theatre" value="{{a.assignShowTime}}" ng-model="$parent.qwerty.time" >
+          <a href="#/seats" >
+             {{a.assignShowTime}}
+           </a>
+          </div>
+        </div>
+
+       </div>
+
+     </div>
+</div>
 </div>
 </div>
 
-<a href="#/seats" class="button-color btn btn-primary" role="button">Proceed</a>
-
+<center><a href="#/seats" ng-click="setShow()" class="button-color btn btn-primary" role="button">Proceed</a></center>
+<br>
 </div>

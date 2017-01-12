@@ -91,8 +91,8 @@ router.put('/updateMovie/:id', function(req, res){
 
 router.put('/updateMovi/:moviTitle/:val',function(req,res){
   console.log("status Changed");
-  console.log(req.body);
-Movie.findOneAndUpdate({title: req.params.title },
+  console.log(req.params);
+Movie.findOneAndUpdate({moviTitle: req.params.assignMovie },
   {
     $set:{status: req.params.val }
 },function (err, data){
@@ -101,6 +101,14 @@ Movie.findOneAndUpdate({title: req.params.title },
 
 });
 
+
+router.get('/moviePoster/:p', function (req, res) {
+    // console.log("REACHED GET FUNCTION ON SERVER");
+    Movie.find({moviTitle:req.params.p}, function (err, docs) {
+         res.json(docs);
+
+    });
+});
 
 // router.put('/updateMovi/:moviTitle/:val', function(req,res){
 //   console.log("status Changed");

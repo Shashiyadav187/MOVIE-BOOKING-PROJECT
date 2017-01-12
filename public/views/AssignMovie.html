@@ -68,9 +68,8 @@
                            <div ng-app="movieApp" data-ng-controller="TimeController as theChildController">
                                       <select id="showtimeSelect" class="showtimeSelect" ng-model="asgn.assignShowTime" multiple >
                                               <option ng-repeat="time in timeList">
-                                                {{time.timeName}}
-                                                {{time.timeMins}}
-                                                {{time.timePeriod}}
+                                                {{time.ShowTime | date:'HH:mm a'}}
+
                                               </option>
                                        </select>
                            </div>

@@ -38,23 +38,25 @@ module.exports = function($scope, $http) {
                                                     var dateTo=document.getElementById("toDate").value;
                                                     asgn.assignDTto=dateTo;
 
-                                                    var showTime = "";
-                                                    var x = 0;
-
-                                                    for (x=0;x<showtimeSelect.length;x++)
-                                                    {
-                                                      if (showtimeSelect[x].selected)
-                                                      {
-
-                                                        showTime = showTime  + showtimeSelect[x].value;
-                                                      }
-                                                    }
-                                                     asgn.assignShowTime=showTime;
+                                                    // var showTime = "";
+                                                    // var x = 0;
+                                                    //
+                                                    // for (x=0;x<showtimeSelect.length;x++)
+                                                    // {
+                                                    //   if (showtimeSelect[x].selected)
+                                                    //   {
+                                                    //
+                                                    //     showTime = showTime  + showtimeSelect[x].value;
+                                                    //   }
+                                                    // }
+                                                    var showtime = document.getElementById("showtimeSelect");
+                                                    var showtime1 = showtime.options[showtime.selectedIndex].text;
+                                                     asgn.assignShowTime=showtime1;
 
 
 
                                                     var val='true';
-                                                    $http.put('/movie/updateMovi/' + $scope.asgn.title+'/'+val).success(function (response) {
+                                                    $http.put('/movie/updateMovi/' + $scope.asgn.assignMovie+'/'+val).success(function (response) {
                                                         console.log(response);
                                                       });
                                                       // alert('Mapping Saved Successfully');
@@ -80,25 +82,32 @@ module.exports = function($scope, $http) {
             refresh();
         });
 
-        var val='false';
-        $http.put('/movie/updateMovi/'+$scope.asgn.title+'/'+val).success(function (response) {
-            console.log(response);
-           });
-
-    };
-
-    $scope.editAsgnMovie = function (asgn) {
-         $http.get('/assign/getAsgnMovie/' + asgn._id).success(function (response) {
-            $scope.asgn = response[0];
+        $http.get('/assign/selmoviename/'+asgn.assignMovie).success(function(response){
+          var len=response.length;
+          if (len==0)
+          {
+            var val='false';
+            $http.put('/movie/updateMovi/'+ asgn.assignMovie +'/'+val).success(function (response) {
+                console.log(response);
+               });
+          }
         });
+
+
     };
 
-    $scope.updateAsgnMovie = function () {
-        console.log("REACHED UPDATE");
-        console.log($scope.asgn._id);
-        $http.put('/assign/updateAsgnMovie/' + $scope.asgn._id, $scope.asgn).success(function (response) {
-            console.log(response);
-            refresh();
-        })
-    }
+    // $scope.editAsgnMovie = function (asgn) {
+    //      $http.get('/assign/getAsgnMovie/' + asgn._id).success(function (response) {
+    //         $scope.asgn = response[0];
+    //     });
+    // };
+
+    // $scope.updateAsgnMovie = function () {
+    //     console.log("REACHED UPDATE");
+    //     console.log($scope.asgn._id);
+    //     $http.put('/assign/updateAsgnMovie/' + $scope.asgn._id, $scope.asgn).success(function (response) {
+    //         console.log(response);
+    //         refresh();
+    //     })
+    // }
 };

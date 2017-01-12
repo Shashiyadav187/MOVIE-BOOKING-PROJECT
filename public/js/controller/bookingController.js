@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($scope, $http) {
+module.exports = function($scope, $http, $rootScope, $location) {
   $scope.booking = 'booking';
 
   var refresh = function () {
@@ -23,7 +23,7 @@ module.exports = function($scope, $http) {
 
                                 }
                             }
-                           
+
                            var serviceName = 'movi'
                             $http.post('/movie/addMovie', movieObj).success(function (response) {
                                 console.log(response);
@@ -59,4 +59,9 @@ module.exports = function($scope, $http) {
             refresh();
         })
     }
+
+  
+
+
+
 };

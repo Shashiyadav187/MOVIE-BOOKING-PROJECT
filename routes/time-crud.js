@@ -12,9 +12,9 @@ var mongoose = require('mongoose');
 
 var timeSchema = mongoose.Schema({
 
-  timeName: String,
-  timeMins: String,
-  timePeriod: String
+  ShowTime: String,
+  // timeMins: String,
+  // timePeriod: String
 
  });
 var Time = mongoose.model('Time', timeSchema, 'time');
@@ -40,18 +40,18 @@ router.post('/addTime', function(req, res){
  console.log(req.body);
 
 
-  var time = req.body.timeName;
-  var timeMin=req.body.timeMins;
-  var timePrd=req.body.timePeriod;
+  var time = req.body.ShowTime;
+  // var timeMin=req.body.timeMins;
+  // var timePrd=req.body.timePeriod;
 
-  var time = new Time({
+  var time1 = new Time({
 
-    timeName: time,
-    timeMins: timeMin,
-    timePeriod: timePrd
+    ShowTime: time,
+    // timeMins: timeMin,
+    // timePeriod: timePrd
   });
 
-  time.save(function(err, docs){
+  time1.save(function(err, docs){
     if ( err ) throw err;
     console.log("Book Saved Successfully");
     res.json(docs);

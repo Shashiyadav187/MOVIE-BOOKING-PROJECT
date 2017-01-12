@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function($scope, $http) {
+module.exports = function($scope, $http, $location) {
   $scope.home = 'home';
 
  var refresh = function () {
@@ -13,5 +13,9 @@ module.exports = function($scope, $http) {
 
     refresh();
 
+    $scope.setMovie=function(movie){
+      sessionStorage.setItem('xyz',movie);
+      // $location.path('/details');
+    };
 
 };

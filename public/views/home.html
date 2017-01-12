@@ -80,12 +80,12 @@
 
 <div class="movies-wrapper">
 
-    <div class="movies-container" ng-repeat="movie in movieList |filter:status=true ">
+    <div class="movies-container" ng-repeat="movie in movieList |filter:{status:'true'} ">
         <img class="movie-poster" ng-src={{movie.moviPoster}} />
         <span class="movie-title">Title : {{movie.moviTitle}}</span>
         <span class="movie-title">Director : {{movie.moviDirector}}</span>
         <span class="movie-title">Description : {{movie.moviDescription}}</span>
         <!-- <button ng-click="bookMovie(movie)" class="button-color book btn btn-primary  ">Book</button> -->
-        <a href="#/details" class="button-color btn btn-primary" role="button">Book</a>
+        <a ng-click="setMovie(movie.moviTitle)"  href="#/details" class="button-color btn btn-primary" role="button">Book</a>
     </div>
 </div>
