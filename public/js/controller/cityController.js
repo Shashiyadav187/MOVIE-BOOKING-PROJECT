@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function($scope, $http) {
-  // $scope.booking = 'booking';
+  
 
   var refresh = function () {
         $http.get('/city/getCity').success(function (response) {

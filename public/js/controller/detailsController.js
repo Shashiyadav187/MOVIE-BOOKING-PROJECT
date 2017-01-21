@@ -1,10 +1,31 @@
 
 module.exports = function($scope, $http, $rootScope, $location) {
-  $scope.details = " ";
-  $scope.qwerty='';
-  $scope.lkjhg="QWERTY";
-  $scope.theatre='';
-  // $scope.detailsList =response;
+
+
+  $scope.city=" ";
+  $scope.date=" ";
+  $scope.Theatre=" ";
+  $scope.showtime=" ";
+
+
+var theatre = function(){
+  $http.get('/theatre/getTheatre').success(function(response){
+    $scope.theatreDetails=response;
+
+  });
+};
+  theatre();
+
+var shotim= function(){
+  $http.get('/assign/getAsgnMovie').success(function(response){
+     $scope.showtim=response;
+  });
+};
+
+  shotim();
+
+
+
 
   var bookingShow=function(){
 var data=sessionStorage.getItem('xyz');
@@ -36,16 +57,20 @@ for(i=0;i<6;i++)
 showDates();
 
 
-var a = $scope.qwerty.Theatre;
-
+// var a =$scope.theatre;
+ // var b = $scope.Date;
+ // alert($scope.Date)
 
 $scope.setShow =function(){
 
-  sessionStorage.setItem('thr',  a);
-  sessionStorage.setItem('city', $scope.qwerty.city);
-  sessionStorage.setItem('shotim', $scope.qwerty.time);
-  sessionStorage.setItem('dt', $scope.qwerty.Date);
-}
+  sessionStorage.setItem('thr',  $scope.Theatre);
+  sessionStorage.setItem('city', $scope.city);
+  sessionStorage.setItem('shotim', $scope.showtime);
+  sessionStorage.setItem('dt', $scope.date);
+
+  };
+
+
 
 
 };

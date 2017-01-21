@@ -92,7 +92,7 @@ router.put('/updateMovie/:id', function(req, res){
 router.put('/updateMovi/:moviTitle/:val',function(req,res){
   console.log("status Changed");
   console.log(req.params);
-Movie.findOneAndUpdate({moviTitle: req.params.assignMovie },
+Movie.findOneAndUpdate({moviTitle: req.params.moviTitle },
   {
     $set:{status: req.params.val }
 },function (err, data){

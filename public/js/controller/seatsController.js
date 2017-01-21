@@ -110,8 +110,10 @@ module.exports = function($scope, $http) {
 
 });
 
-
-
-
+$scope.setTicket=function(){
+  sessionStorage.setItem('cls', document.getElementById('seatCls').value );
+  sessionStorage.setItem('nOfS', document.getElementById('noOFSeats').value );
+  sessionStorage.setItem('Amt', document.getElementById('totalAmount').value );
+}
 
 };

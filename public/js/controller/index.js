@@ -14,3 +14,6 @@ app.controller('AssignMoviesController', require('./assignMoviesController'));
 app.controller('SeatsController', require('./seatsController'));
 app.controller('DetailsController', require('./detailsController'));
 app.controller('PaymentController', require('./paymentController'));
+app.controller('LoginController', require('./loginController'));
+app.controller('RegisterController', require('./registerController'));
+app.controller('StartController', require('./startController'));
